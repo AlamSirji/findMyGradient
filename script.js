@@ -147,11 +147,11 @@ const clearViewBtn = document.getElementById("clearViewBtn");
 clearViewBtn.addEventListener("click",() => {
     const ids = ["cssStyle","logBar"];
     for (let index = 0; index < ids.length; index++) {
-        const element = document.getElementById(`${ids[index]}`);
-        if (element.style.display === "none") {
-            element.style.display = "block";
+        const e = document.getElementById(`${ids[index]}`);
+        if (e.classList.contains("hide")) {
+            e.classList.remove("hide");
         } else {
-            element.style.display = "none";
+            e.classList.add("hide");
         }
     }
 });

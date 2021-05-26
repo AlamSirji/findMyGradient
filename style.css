@@ -48,6 +48,12 @@ p {
     right:5px;
     cursor: pointer;
 }
+#cssStyle, #logBar {
+    transition: opacity 1s;
+}
+.hide {
+    opacity: 0;
+}
 
 
 @media (max-width:550px){
