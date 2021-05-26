@@ -4,14 +4,6 @@
 // });
 generateRandomGradient();
 
-window.addEventListener("keypress", (e) => {
-    // 32 spacebar
-    if (e.keyCode === 32) {
-        generateRandomGradient();
-    }
-});
-window.addEventListener("touchstart", generateRandomGradient);
-
 function generateRandomGradient() {
 
     const maxColorStop = 5;
@@ -142,3 +134,24 @@ function printLogs(cssStyleValue) {
         }
     })
 }
+
+window.addEventListener("touchstart", generateRandomGradient);
+window.addEventListener("keypress", (e) => {
+    // 32 spacebar
+    if (e.keyCode === 32) {
+        generateRandomGradient();
+    }
+});
+
+const clearViewBtn = document.getElementById("clearViewBtn");
+clearViewBtn.addEventListener("click",() => {
+    const ids = ["cssStyle","logBar"];
+    for (let index = 0; index < ids.length; index++) {
+        const element = document.getElementById(`${ids[index]}`);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+});
