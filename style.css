@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100&display=swap');
+ 
+* {
+    box-sizing: border-box;
+}
+
 html {
     height:100%;
 }
@@ -20,7 +25,7 @@ p {
     bottom:0px;
     right:0px;
     padding:5px;
-    background-color:rgba(0, 0, 0, 0.39);
+    background-color:rgba(0, 0, 0, 0.2);
     color:white;
     box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.507);
 }
@@ -31,21 +36,14 @@ p {
 #logOL li {
     cursor: pointer;
     user-select: none;
+    opacity: 0.3;
+}
+#logOL li:hover {
+    opacity: 1;
 }
 
-@media (max-width:850px){
-    p {
-        margin: 2% 10%;
-    }
-}
-@media (max-width:650px){
-    p {
-        margin: 2% 2%;
-    }
-}
 @media (max-width:550px){
-    p {
-        margin: 2% 1%;
-        word-wrap: break-word;
-    }
+   #logBar {
+       font-size:14px;
+   }
 }
