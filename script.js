@@ -165,7 +165,7 @@ window.addEventListener("keypress", (e) => {
     }
 });
 
-function changeView() {
+function changeView(e) {
     const ids = ["logContainer"];
     for (let index = 0; index < ids.length; index++) {
         const e = document.getElementById(`${ids[index]}`);
@@ -174,5 +174,10 @@ function changeView() {
         } else {
             e.classList.add("hide");
         }
+    }
+    if (e.innerHTML === "🐵") {
+        e.innerHTML = "🙈";
+    } else {
+        e.innerHTML = "🐵";
     }
 }
