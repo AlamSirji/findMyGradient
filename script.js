@@ -116,7 +116,7 @@ class gradient {
 
     randomize() {
         let style = this.getRandomStyle();
-        this.setStyle(this.container,style);
+        this.setStyle(this.container, style);
         this.printLogs(style);
     }
 
@@ -132,27 +132,32 @@ class gradient {
             // apply style to current body
             myGradient.container.style.backgroundImage = cssStyleValue;
         });
-        newLi.addEventListener("click", (e) => {
-            // copy style to clipboard
-            let cssStyleValue = e.target.innerHTML;
-            if (typeof Navigator.clipboard != undefined) {
-                const textArea = document.createElement("TEXTAREA");
-                textArea.value = cssStyleValue;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("copy");
-                textArea.remove();
-            } else {
-                Navigator.clipboard.writeText(cssStyleValue);
-            }
-        })
+        // newLi.addEventListener("click", (e) => {
+        //     let cssStyleValue = e.target.innerHTML;
+        //     // copy style to clipboard
+        //     if (typeof Navigator.clipboard != undefined) {
+        //         const textArea = document.createElement("TEXTAREA");
+        //         textArea.value = cssStyleValue;
+        //         document.body.appendChild(textArea);
+        //         textArea.select();
+        //         document.execCommand("copy");
+        //         textArea.remove();
+        //     } else {
+        //         Navigator.clipboard.writeText(cssStyleValue);
+        //     }
+        //     myGradient.container.style.backgroundImage = cssStyleValue;
+        // })
+        newLi.addEventListener("touchstart", (e) => {
+            // apply style to current body
+            myGradient.container.style.backgroundImage = cssStyleValue;
+        });
     }
 
 }
 
 var myGradient = new gradient("colorContainer");
 
-window.addEventListener("touchstart", myGradient.randomize());
+myGradient.container.addEventListener("touchstart", () => myGradient.randomize());
 window.addEventListener("keypress", (e) => {
     // 32 spacebar
     if (e.keyCode === 32) {
@@ -160,7 +165,7 @@ window.addEventListener("keypress", (e) => {
     }
 });
 
-function changeView(){
+function changeView() {
     const ids = ["logContainer"];
     for (let index = 0; index < ids.length; index++) {
         const e = document.getElementById(`${ids[index]}`);
