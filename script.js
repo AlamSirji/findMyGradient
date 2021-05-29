@@ -168,21 +168,19 @@ window.addEventListener("keypress", (e) => {
     }
 });
 
-function changeView(e) {
+function changeView(m) {
     const ids = ["logContainer"];
     for (let index = 0; index < ids.length; index++) {
-        const e = document.getElementById(`
-                $ { ids[index] }
-                `);
+        const e = document.getElementById(`${ids[index]}`);
         if (e.classList.contains("hide")) {
             e.classList.remove("hide");
         } else {
             e.classList.add("hide");
         }
     }
-    if (e.innerHTML === "🐵") {
-        e.innerHTML = "🙈";
+    if (m.innerHTML === "🐵") {
+        m.innerHTML = "🙈";
     } else {
-        e.innerHTML = "🐵";
+        m.innerHTML = "🐵";
     }
 }
