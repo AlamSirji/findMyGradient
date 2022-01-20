@@ -1,3 +1,4 @@
+alert('Press spacebar or touch screen to change gradient');
 class gradient {
 
     container;
